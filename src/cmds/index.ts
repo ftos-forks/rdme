@@ -14,6 +14,7 @@ import OpenCommand from './open';
 import OpenAPICommand from './openapi';
 import OpenAPIConvertCommand from './openapi/convert';
 import OpenAPIInspectCommand from './openapi/inspect';
+import OpenAPIPreviewCommand from './openapi/preview';
 import OpenAPIReduceCommand from './openapi/reduce';
 import OpenAPIValidateCommand from './openapi/validate';
 import SwaggerCommand from './swagger';
@@ -50,6 +51,7 @@ const commands = {
   openapi: OpenAPICommand,
   'openapi:convert': OpenAPIConvertCommand,
   'openapi:inspect': OpenAPIInspectCommand,
+  'openapi:preview': OpenAPIPreviewCommand,
   'openapi:reduce': OpenAPIReduceCommand,
   'openapi:validate': OpenAPIValidateCommand,
 

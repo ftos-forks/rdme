@@ -39,7 +39,13 @@ const capitalizeSpecType = (type: string) =>
  */
 export default async function prepareOas(
   path: string,
-  command: 'openapi' | 'openapi:convert' | 'openapi:inspect' | 'openapi:reduce' | 'openapi:validate',
+  command:
+    | 'openapi'
+    | 'openapi:convert'
+    | 'openapi:inspect'
+    | 'openapi:preview'
+    | 'openapi:reduce'
+    | 'openapi:validate',
   opts: {
     /**
      * Optionally convert the supplied or discovered API definition to the latest OpenAPI release.
@@ -74,13 +80,13 @@ export default async function prepareOas(
 
     const fileFindingSpinner = ora({ text: 'Looking for API definitions...', ...oraOptions() }).start();
 
-    let action: 'convert' | 'inspect' | 'reduce' | 'upload' | 'validate';
+    let action: 'convert' | 'inspect' | 'preview' | 'reduce' | 'upload' | 'validate';
     switch (command) {
       case 'openapi':
         action = 'upload';
         break;
       default:
-        action = command.split(':')[1] as 'convert' | 'inspect' | 'reduce' | 'validate';
+        action = command.split(':')[1] as 'convert' | 'inspect' | 'preview' | 'reduce' | 'validate';
     }
 
     const jsonAndYamlFiles = readdirRecursive('.', true).filter(
