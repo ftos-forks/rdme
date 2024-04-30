@@ -2,6 +2,7 @@ import CategoriesCreateCommand from './categories/create.js';
 import CategoriesCommand from './categories/index.js';
 import ChangelogsCommand from './changelogs.js';
 import CustomPagesCommand from './custompages.js';
+import DocsExportCommand from './docs/export.js';
 import DocsCommand from './docs/index.js';
 import DocsPruneCommand from './docs/prune.js';
 import GuidesCommand from './guides/index.js';
@@ -29,6 +30,7 @@ const commands = {
   custompages: CustomPagesCommand,
 
   docs: DocsCommand,
+  'docs:export': DocsExportCommand,
   'docs:prune': DocsPruneCommand,
   guides: GuidesCommand,
   'guides:prune': GuidesPruneCommand,
